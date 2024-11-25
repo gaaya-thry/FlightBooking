@@ -91,6 +91,18 @@ public class FlightDB implements Serializable {
                 System.out.println("Error saving flight database: " + e.getMessage());
             }
         }
+
+ // search flights based on the given dates
+ public ArrayList<Flight> searchFlightsByDate(Date date) {
+    ArrayList<Flight> results = new ArrayList<>();
+    for (Flight flight : flights) {
+        if (flight.getDate().equals(date)) {
+            results.add(flight);
+        }
+    }
+    return results;
+}
+
     }
 
 
