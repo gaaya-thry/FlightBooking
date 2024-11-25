@@ -126,4 +126,20 @@ public class Flight implements Serializable {
         }
         return null; // Not found
     }
+
+    //to alloow editing
+    public boolean editPassengerInfo(String bookingReference, String newName, String newPassportNumber) {
+    Passenger passenger = findPassenger(bookingReference);
+    if (passenger != null) {
+        if (newName != null && !newName.isEmpty()) {
+            passenger.setName(newName);
+        }
+        if (newPassportNumber != null && !newPassportNumber.isEmpty()) {
+            passenger.setPassportNumber(newPassportNumber);
+        }
+        return true; // Edit successful
+    }
+    return false; // Passenger not found
+}
+
 }
