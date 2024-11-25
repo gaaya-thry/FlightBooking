@@ -22,6 +22,7 @@ public class Flight implements Serializable {
         this.waitingList = new LinkedList<>();
     }
 
+    
     // Getters for flight details
     public String getFlightNumber() {
         return flightNumber;
